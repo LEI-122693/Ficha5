@@ -1,24 +1,50 @@
 package org.example.ficha4;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
-// page_url = https://www.jetbrains.com/
+import com.codeborne.selenide.SelenideElement;
+
+import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.$x;
+
 public class MainPage {
-    @FindBy(xpath = "//*[@data-test-marker='Developer Tools']")
-    public WebElement seeDeveloperToolsButton;
 
-    @FindBy(xpath = "//*[@data-test='suggestion-action']")
-    public WebElement findYourToolsButton;
+    // Botão principal "Developer Tools"
+    public SelenideElement devToolsEntry = $x("//*[@data-test-marker='Developer Tools']");
 
-    @FindBy(xpath = "//div[@data-test='main-menu-item' and @data-test-marker = 'Developer Tools']")
-    public WebElement toolsMenu;
+    // Botão "Find Your Tools"
+    public SelenideElement exploreToolsLink = $x("//*[@data-test='suggestion-link']");
 
-    @FindBy(css = "[data-test='site-header-search-action']")
-    public WebElement searchButton;
+    // Menu dropdown "Developer Tools"
+    public SelenideElement devToolsDropdown = $("[aria-label='Developer Tools: Open submenu']");
 
-    public MainPage(WebDriver driver) {
-        PageFactory.initElements(driver, this);
+    // Botão de pesquisa da navbar
+    public SelenideElement searchTrigger = $("[data-test='site-header-search-action']");
+
+    // Campo de input da pesquisa
+    public SelenideElement searchBox = $("[data-test-id='search-input']");
+
+
+    // Abre o painel de pesquisa
+    public void openSearch() {
+        searchTrigger.click();
+    }
+
+    // Escreve no campo de pesquisa
+    public void fillSearch(String query) {
+        searchBox.setValue(query);
+    }
+
+    // Expande o dropdown de Developer Tools
+    public void openToolsDropdown() {
+        devToolsDropdown.click();
+    }
+
+    // Abre "See Developer Tools"
+    public void accessDeveloperTools() {
+        devToolsEntry.click();
+    }
+
+    // Abre "Find Your Tools"
+    public void accessToolsFinder() {
+        exploreToolsLink.click();
     }
 }
