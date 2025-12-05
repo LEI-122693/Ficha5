@@ -1,4 +1,4 @@
-package org.example.ficha4;
+package org.example.ficha5;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
