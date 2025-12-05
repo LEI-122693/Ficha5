@@ -21,7 +21,6 @@ public class MainPage {
     public void clickFindYourToolsButton() {
         findYourToolsButton.click();
     }
-
     // Expande o menu "Developer Tools"
     public void expandToolsMenu() {
         toolsMenu.click();
