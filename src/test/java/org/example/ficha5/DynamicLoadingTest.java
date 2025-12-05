@@ -29,7 +29,7 @@ public class DynamicLoadingTest {
 
     @Test
     public void testDynamicLoading() {
-        // Clica no botão Start.
+        // Clica no botão Start
         page.clickStart();
 
         // Espera até o texto aparecer

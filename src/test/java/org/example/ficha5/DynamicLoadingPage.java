@@ -11,7 +11,7 @@ public class DynamicLoadingPage {
     // Texto que aparece após carregamento
     public SelenideElement finishText = $("#finish");
 
-    // Clica no botão "Start".
+    // Clica no botão "Start"
     public void clickStart() {
         startButton.click();
     }
